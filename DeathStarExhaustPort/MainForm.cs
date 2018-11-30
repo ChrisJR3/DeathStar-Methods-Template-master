@@ -123,16 +123,21 @@ namespace DeathStarExhaustPort
             Pen shipPen = new Pen(Color.White);
             Pen trailPen = new Pen(Color.Orange);
 
-            float scale = Size/;
+            //float scale = Size/;
 
-            offScreen.DrawLine(shipPen, , , , );
+            //offScreen.DrawLine(shipPen, , , , );
 
-            offScreen.DrawLine(shipPen, x, y + height / 2, x + width/2, y + height/4*);
+            //Nose of ship
+            offScreen.DrawLine(shipPen, x, y + height/2, x + width/2, y + height*2/6);
+            offScreen.DrawLine(shipPen, x, y + height/2, x + width * 3/4, y + height*3/4);
+
+            //Cockpit
+            offScreen.DrawArc(shipPen, x + width*3/4, y + height*3/4, x + width/4, y + height*2/6, 180, y + height*2/6);
 
             /// Use the rectangle below for testing purposes. 
             /// Your shape should always draw within this rectangle, reglardless of size and position.
             /// Comment it out when you are done.
-            offScreen.DrawRectangle(shipPen, x, y, width, height)
+            offScreen.DrawRectangle(shipPen, x, y, width, height);
         }
 
         public void Torpedo(float x, float y, float pixels)
