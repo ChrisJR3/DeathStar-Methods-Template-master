@@ -128,11 +128,32 @@ namespace DeathStarExhaustPort
             //offScreen.DrawLine(shipPen, , , , );
 
             //Nose of ship
-            offScreen.DrawLine(shipPen, x, y + height/2, x + width/2, y + height*2/6);
-            offScreen.DrawLine(shipPen, x, y + height/2, x + width * 3/4, y + height*3/4);
+            offScreen.DrawLine(shipPen, x, y + height/2, x + width*7/16, y + height*2/6);
+            offScreen.DrawLine(shipPen, x, y + height/2, x + width*4/6, y + height*10/15);
 
             //Cockpit
-            offScreen.DrawArc(shipPen, x + width*3/4, y + height*3/4, x + width/4, y + height*2/6, 180, y + height*2/6);
+            offScreen.DrawArc(shipPen, x + width*7/16, y + height*1/5, x + width*11/50, y + height*3/15, 180, 180);
+
+            //Cockit-wing
+            offScreen.DrawLine(shipPen, x + width*4/6, y + height*2/6, x + width*4/6, y + height*2/15);
+
+            //Upper gun
+            offScreen.DrawLine(shipPen, x + width*3/8, y + height*2/15, x + width*7/8, y + height*2/15);
+
+            //Back of ship
+            offScreen.DrawLine(shipPen, x + width*7/8, y + height*2/15, x + width*7/8, y + height*12/15);
+
+            //Trail
+            offScreen.DrawLine(trailPen, x + width*7/8, y + height*4/15, x + width, y + height*5/15);
+            offScreen.DrawLine(trailPen, x + width*7/8, y + height*6/15, x + width, y + height*5/15);
+            offScreen.DrawLine(trailPen, x + width*7/8, y + height*2/3, x + width, y + height*11/15);
+            offScreen.DrawLine(trailPen, x + width*7/8, y + height*12/15, x + width, y + height*11/15);
+
+            //Lower gun
+            offScreen.DrawLine(shipPen, x + width*3/8, y + height*12/15, x + width*7/8, y + height*12/15);
+
+            //Lower line-wing
+            offScreen.DrawLine(shipPen, x + width*4/6, y + height*12/15, x + width*4/6, y + height*10/15);
 
             /// Use the rectangle below for testing purposes. 
             /// Your shape should always draw within this rectangle, reglardless of size and position.
@@ -172,12 +193,27 @@ namespace DeathStarExhaustPort
 
         public void ExhaustPort(float x, float y, float width, float height)
         {
+            //Pen Colors Red & White
             Pen exPen = new Pen(Color.White);
+            Pen rPen = new Pen(Color.Red);
 
-            /// Use the rectangle below for testing purposes. 
-            /// Your shape should always draw within this rectangle, reglardless of size and position.
-            /// Comment it out when you are done.
-            offScreen.DrawRectangle(exPen, x, y, width, height);
+            //Resize Variable
+            float reSw = width / 20;
+            float reSh = height / 205;
+
+            //Exhaust Pipe
+            offScreen.DrawLine(rPen, 7 * reSw + x, 0 * reSh + y, 7 * reSw + x, 187 * reSh + y);
+            offScreen.DrawLine(rPen, 13 * reSw + x, 0 * reSh + y, 13 * reSw + x, 187 * reSh + y);
+            offScreen.DrawLine(exPen, 5 * reSw + x, 4 * reSh + y, 5 * reSw + x, 186 * reSh + y);
+            offScreen.DrawLine(exPen, 15 * reSw + x, 4 * reSh + y, 15 * reSw + x, 186 * reSh + y);
+
+            offScreen.DrawLine(exPen, 7 * reSw + x, 0 * reSh + y, 0 * reSw + x, 18 * reSh + y);
+            offScreen.DrawLine(exPen, 0 * reSw + x, 18 * reSh + y, 5 * reSw + x, 18 * reSh + y);
+            offScreen.DrawLine(exPen, 13 * reSw + x, 0 * reSh + y, 20 * reSw + x, 18 * reSh + y);
+            offScreen.DrawLine(exPen, 20 * reSw + x, 18 * reSh + y, 15 * reSw + x, 18 * reSh + y);
+            //Reactor Port
+            offScreen.DrawArc(exPen, 0 * reSw + x, 185 * reSh + y, 20 * reSh, 20 * reSh, -120, -300);
+            offScreen.DrawArc(rPen, 2 * reSw + x, 187 * reSh + y, 16 * reSh, 16 * reSh, -120, -300);
         }
 
         private void fullButton_Click(object sender, EventArgs e)
