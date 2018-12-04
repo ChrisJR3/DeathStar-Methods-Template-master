@@ -135,16 +135,22 @@ namespace DeathStarExhaustPort
 
             //Main lines
             offScreen.DrawLine(shipPen, x + width / 10, y + height * 13 / 32, x + width * 7 / 16, y + height * 2 / 6);
-            offScreen.DrawLine(shipPen, x + width / 10, y + height * 19 / 32, x + width * 19 / 24, y + height * 12 / 15);
+            offScreen.DrawLine(shipPen, x + width / 10, y + height * 19 / 32, x + width * 4 / 6, y + height * 9 / 15);
 
             //Cockpit
             offScreen.DrawArc(shipPen, x + width * 7 / 16, y + height * 1 / 5, width * 11 / 50, height * 3 / 15, 180, 180);
 
+            //Cockit-Cockpit-wing
+            offScreen.DrawLine(shipPen, x + width * 4 / 6, y + height * 2 / 6, x + width * 5 / 6, y + height * 2 / 6);
+
             //Cockit-wing
-            offScreen.DrawLine(shipPen, x + width * 4 / 6, y + height * 2 / 6, x + width * 4 / 6, y + height * 2 / 15);
+            offScreen.DrawLine(shipPen, x + width * 5 / 6, y + height * 2 / 6, x + width * 5 / 6, y + height * 2 / 15);
 
             //Upper gun
             offScreen.DrawLine(shipPen, x + width * 3 / 8, y + height * 2 / 15, x + width * 7 / 8, y + height * 2 / 15);
+
+            //Upper secondary gun
+            offScreen.DrawLine(shipPen, x + width * 3 / 8, y + height / 15, x + width * 5 / 6, y + height / 15);
 
             //Upper gun > part
             offScreen.DrawLine(shipPen, x + width * 4 / 8, y + height * 2 / 15, x + width * 3 / 8, y + height * 1 / 15);
@@ -162,25 +168,21 @@ namespace DeathStarExhaustPort
             //Lower gun
             offScreen.DrawLine(shipPen, x + width * 3 / 8, y + height * 12 / 15, x + width * 7 / 8, y + height * 12 / 15);
 
+            //Secondary Lower gun
+            offScreen.DrawLine(shipPen, x + width * 3 / 8, y + height * 11 / 15, x + width * 4 / 6, y + height * 11 / 15);
+
+            //Lower gun connector
+            offScreen.DrawLine(shipPen, x + width * 4 / 6, y + height * 12 / 15, x + width * 4 / 6, y + height * 9 / 15);
+
             //Upper gun > part
             offScreen.DrawLine(shipPen, x + width * 4 / 8, y + height * 12 / 15, x + width * 3 / 8, y + height * 11 / 15);
             offScreen.DrawLine(shipPen, x + width * 4 / 8, y + height * 12 / 15, x + width * 3 / 8, y + height * 13 / 15);
 
-            //Interior Design lines
+            //Cockpit bottom line
             offScreen.DrawLine(shipPen, x + width * 7 / 16, y + height *7 / 20, x + width * 22 / 32, y + height * 7 / 20);
 
-            offScreen.DrawLine(redPen, x + width * 2/ 10, y + height * 15 / 32, x + width* 3/ 10, y + height * 15 / 32);
-            offScreen.DrawLine(redPen, x + width * 2 / 10, y + height * 15 / 32, x + width * 2 / 10, y + height * 17 / 32);
-            offScreen.DrawLine(redPen, x + width * 3 / 10, y + height * 15 / 32, x + width * 3 / 10, y + height * 17 / 32);
-            offScreen.DrawLine(redPen, x + width * 2 / 10, y + height * 17 / 32, x + width * 3 / 10, y + height * 17 / 32);
-
+            //Red Bars
             offScreen.FillRectangle(drawBrush, x + width * 2 / 10, y + height * 15 / 32, width * 2 / 10, height * 2 / 32);
-
-            offScreen.DrawLine(redPen, x + width * 4 / 10, y + height * 15 / 32, x + width * 7 / 10, y + height * 15 / 32);
-            offScreen.DrawLine(redPen, x + width * 4 / 10, y + height * 15 / 32, x + width * 4 / 10, y + height * 17 / 32);
-            offScreen.DrawLine(redPen, x + width * 7 / 10, y + height * 15 / 32, x + width * 7 / 10, y + height * 17 / 32);
-            offScreen.DrawLine(redPen, x + width * 4 / 10, y + height * 17 / 32, x + width * 7 / 10, y + height * 17 / 32);
-
             offScreen.FillRectangle(drawBrush, x + width * 4 / 10, y + height * 15 / 32, width * 3 / 10, height * 2 / 32);
         }
 
